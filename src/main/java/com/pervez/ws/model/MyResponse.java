@@ -1,20 +1,31 @@
 package com.pervez.ws.model;
 
+import java.util.List;
+
 public class MyResponse {
 	
-	String name;
-	String lastname;
+	Boolean status;
+	List<User> object;
+	String message;
+	public Boolean getStatus() {
+		return status;
+	}
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+	public List<User> getObject() {
+		return object;
+	}
+	public void setObject(List<User> object) {
+		this.object = object;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+	
+	
 }
