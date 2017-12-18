@@ -57,6 +57,8 @@ public class MainService {
 		return user;
 	}
 	
-	
+	public void addUser(com.pervez.ws.domain.User user){
+		userDao.addUser(user);
+	}
 	
 }

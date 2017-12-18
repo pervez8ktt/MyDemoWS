@@ -20,9 +20,18 @@ public class UserDao {
 		
 		Session session = sessionFactory.getCurrentSession();
 		
+		//select * from user where id = 1
+		
 		User user = (User)session.createQuery("from User where id = :id").setParameter("id", id).uniqueResult();
 		
 		return user;
+	}
+	
+	public void addUser(User user){
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		session.save(user);
 	}
 	
 }
