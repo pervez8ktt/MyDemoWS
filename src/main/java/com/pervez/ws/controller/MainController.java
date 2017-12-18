@@ -43,6 +43,13 @@ public class MainController {
 	}
 	
 	
-	
+	@RequestMapping(value="/fetchuser", method=RequestMethod.POST)
+	public @ResponseBody String helloWorld(@RequestParam String id){
+		
+		
+		com.pervez.ws.domain.User user = mainService.fetchUserById(Integer.parseInt(id));
+		
+		return gson.toJson(user);
+	}
 	
 }

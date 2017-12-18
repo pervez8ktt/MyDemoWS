@@ -13,7 +13,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/application-config.xml</param-value>
+        <!-- <param-value>classpath:spring/application-config.xml</param-value> -->
+        <param-value>classpath:spring/application-config.xml /WEB-INF/mvc-config.xml /WEB-INF/db-profile.xml</param-value>
     </context-param>
 
     <listener>

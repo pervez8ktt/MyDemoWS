@@ -5,14 +5,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.pervez.ws.dao.UserDao;
 import com.pervez.ws.model.MyResponse;
 import com.pervez.ws.model.User;
 
 @Service
+@Transactional
 public class MainService {
 
-	
+	@Autowired
+	UserDao userDao;
 	
 	
 	public MyResponse getMyResponse(String name, String lastName){
@@ -40,5 +44,19 @@ public class MainService {
 		
 		return myResponse;
 	}
+
+
+	public com.pervez.ws.domain.User fetchUserById(int id) {
+		
+		MyResponse myResponse = new MyResponse();
+		
+		com.pervez.ws.domain.User user = userDao.fetchUserById(id);
+		
+		
+		
+		return user;
+	}
+	
+	
 	
 }
