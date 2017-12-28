@@ -34,4 +34,10 @@ public class UserDao {
 		session.save(user);
 	}
 	
+	public void updateUser(User user){
+		Session session = sessionFactory.getCurrentSession();
+		
+		session.saveOrUpdate(user);
+	}
+	
 }

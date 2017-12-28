@@ -46,19 +46,26 @@ public class MainService {
 	}
 
 
-	public com.pervez.ws.domain.User fetchUserById(int id) {
+	public User fetchUserById(int id) {
 		
 		MyResponse myResponse = new MyResponse();
 		
 		com.pervez.ws.domain.User user = userDao.fetchUserById(id);
 		
+		User userModel = new User();
 		
+		userModel.setId(user.getId());
+		userModel.setName(user.getName());
 		
-		return user;
+		return userModel;
 	}
 	
 	public void addUser(com.pervez.ws.domain.User user){
 		userDao.addUser(user);
+	}
+	
+	public void updateUserName(com.pervez.ws.domain.User user){
+		
 	}
 	
 }

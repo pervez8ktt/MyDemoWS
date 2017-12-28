@@ -48,7 +48,7 @@ public class MainController {
 	public @ResponseBody String helloWorld(@RequestParam String id){
 		
 		
-		com.pervez.ws.domain.User user = mainService.fetchUserById(Integer.parseInt(id));
+		User user = mainService.fetchUserById(Integer.parseInt(id));
 		
 		return gson.toJson(user);
 	}
@@ -63,7 +63,6 @@ public class MainController {
 		}catch(Exception e){
 			return "Fail";
 		}
-		
 		
 	}
 }

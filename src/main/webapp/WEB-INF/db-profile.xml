@@ -16,6 +16,10 @@
         <property name="username" value="root" />
         <property name="password" value="mysql" />
         
+        <!-- <property name="url" value="jdbc:mysql://103.93.16.121/invokeco_user" />
+        <property name="username" value="statusapp" />
+        <property name="password" value="maburepaq" /> -->
+        
     </bean>
 	
 
