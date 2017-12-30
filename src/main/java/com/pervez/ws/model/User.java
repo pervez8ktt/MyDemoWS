@@ -5,6 +5,7 @@ public class User {
 	int id;
 	String name;
 	String lastname;
+	String password;
 	
 	public int getId() {
 		return id;
@@ -24,5 +25,13 @@ public class User {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	
 }

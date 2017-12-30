@@ -17,8 +17,8 @@ import com.pervez.ws.model.User;
 import com.pervez.ws.service.MainService;
 
 @Controller
-@RequestMapping(value="/main")
-public class MainController {
+@RequestMapping(value="/another")
+public class AnotherController {
 
 	@Autowired
 	MainService mainService;
@@ -35,8 +35,9 @@ public class MainController {
 		// Call Service method for business logic
 		MyResponse myResponse = mainService.getMyResponse(name, lastname);
 		
-		myResponse.setMessage("main");
+		
 		myResponse.getObject().add(user);
+		myResponse.setMessage("another");
 		
 		//Is return data from service is valid or not
 		
@@ -60,18 +61,6 @@ public class MainController {
 		
 		try{
 			mainService.addUser(user);
-			return "Success";
-		}catch(Exception e){
-			return "Fail";
-		}
-		
-	}
-	
-	@RequestMapping(value="/updateuser", method=RequestMethod.POST)
-	public @ResponseBody String updateUser(@ModelAttribute User user){
-		
-		try{
-			mainService.updateUserName(user);
 			return "Success";
 		}catch(Exception e){
 			return "Fail";

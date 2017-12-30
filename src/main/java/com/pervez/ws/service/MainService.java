@@ -64,8 +64,23 @@ public class MainService {
 		userDao.addUser(user);
 	}
 	
-	public void updateUserName(com.pervez.ws.domain.User user){
+	public void updateUserName(User user){
 		
+		com.pervez.ws.domain.User userEntity = userDao.fetchUserById(user.getId());
+		try{
+			if(user.getName()!=null)
+				userEntity.setName(user.getName());
+		}catch(Exception e){
+			
+		}
+		
+		try{
+			if(user.getPassword()!=null)
+				userEntity.setPassword(user.getPassword());
+		}catch(Exception e){}
+		
+		
+		userDao.updateUser(userEntity);
 	}
 	
 }
