@@ -7,6 +7,8 @@ public class User {
 	String lastname;
 	String password;
 	
+	Job job;
+	
 	public int getId() {
 		return id;
 	}
@@ -30,6 +32,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Job getJob() {
+		return job;
+	}
+	public void setJob(Job job) {
+		this.job = job;
 	}
 	
 	

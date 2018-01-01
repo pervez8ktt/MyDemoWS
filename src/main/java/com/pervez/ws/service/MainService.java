@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pervez.ws.dao.UserDao;
+import com.pervez.ws.model.Job;
 import com.pervez.ws.model.MyResponse;
 import com.pervez.ws.model.User;
 
@@ -54,8 +55,13 @@ public class MainService {
 		
 		User userModel = new User();
 		
+		Job job = new Job();
+		
+		job.setTitle(user.getJob().getTitle());
+		
 		userModel.setId(user.getId());
 		userModel.setName(user.getName());
+		userModel.setJob(job);
 		
 		return userModel;
 	}
